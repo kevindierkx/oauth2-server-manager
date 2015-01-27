@@ -16,6 +16,9 @@ ClassLoader::addDirectories(array(
 	app_path().'/commands',
 	app_path().'/controllers',
 	app_path().'/models',
+	app_path().'/providers',
+	app_path().'/repositories',
+	app_path().'/traits',
 	app_path().'/database/seeds',
 
 ));
@@ -79,3 +82,11 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Filters File
+|--------------------------------------------------------------------------
+*/
+
+require app_path().'/helpers.php';

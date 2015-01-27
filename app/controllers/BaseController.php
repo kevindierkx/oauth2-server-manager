@@ -1,17 +1,36 @@
 <?php
 
+use Illuminate\View\Factory as ViewFactory;
+
 class BaseController extends Controller {
 
 	/**
-	 * Setup the layout used by the controller.
+	 * @var \Illuminate\View\View
+	 */
+	protected $layout = 'layouts.master';
+
+	/**
+	 * @var \Illuminate\View\Factory
+	 */
+	protected $viewFactory;
+
+	/**
+	 * Bind view factory instance to class.
 	 *
-	 * @return void
+	 * @param  \Illuminate\View\Factory  $viewFactory
+	 */
+	public function __construct(ViewFactory $viewFactory)
+	{
+		$this->viewFactory = $viewFactory;
+	}
+
+	/**
+	 * Setup the layout used by the controller.
 	 */
 	protected function setupLayout()
 	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
+		if ( ! is_null($this->layout) ) {
+			$this->layout = $this->viewFactory->make($this->layout);
 		}
 	}
 

@@ -122,6 +122,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		# Manager
+		'Manager\ManagerServiceProvider',
+		'Manager\ClientsServiceProvider',
+		'Manager\GrantsServiceProvider',
+		'Manager\ScopesServiceProvider',
+
 	),
 
 	/*
