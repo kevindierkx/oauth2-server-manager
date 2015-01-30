@@ -2,8 +2,8 @@
 	<div class="btn-toolbar pull-right">
 		{{
 			link_to_route(
-				'clients.create',
-				'Add Client',
+				'oauth.clients.create',
+				'Add client',
 				[],
 				['class' => 'btn btn-primary']
 			)

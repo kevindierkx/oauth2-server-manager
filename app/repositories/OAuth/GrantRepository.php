@@ -1,12 +1,12 @@
 <?php namespace OAuth;
 
-class ScopesRepository {
+class GrantRepository implements GrantRepositoryInterface {
 
 	use \RepositoryTrait;
 
 	/**
 	 * @var \Illuminate\Database\Eloquent\Model
 	 */
-	protected $model = '\OAuth\Scope';
+	protected $model = '\OAuth\Grant';
 
 }

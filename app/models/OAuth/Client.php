@@ -1,6 +1,7 @@
 <?php namespace OAuth;
 
 use Illuminate\Database\Eloquent\Model;
+use Webpatser\Uuid\Uuid;
 
 class Client extends Model {
 
@@ -10,14 +11,62 @@ class Client extends Model {
 	protected $table = 'clients';
 
 	/**
-	 * @var string
+	 * {@inheritDoc}
 	 */
-	protected static $grantsModel = '\OAuth\Grant';
+	public $incrementing = false;
 
 	/**
 	 * @var string
 	 */
-	protected static $scopesModel = '\OAuth\Scope';
+	protected static $endpointModel = 'OAuth\Endpoint';
+
+	/**
+	 * @var string
+	 */
+	protected static $grantsModel = 'OAuth\Grant';
+
+	/**
+	 * @var string
+	 */
+	protected static $scopesModel = 'OAuth\Scope';
+
+	/**
+	 * The name of the "client id" column.
+	 *
+	 * @var string
+	 */
+	const CLIENT_ID = 'id';
+
+	/**
+	 * The name of the "client secret" column.
+	 *
+	 * @var string
+	 */
+	const CLIENT_SECRET = 'secret';
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected static function boot()
+	{
+		parent::boot();
+
+		// Here we add the UUID formatted client ID and secret during creation.
+		static::creating(function ($model) {
+            $model->{$model::CLIENT_ID}     = (string) Uuid::generate(4);
+            $model->{$model::CLIENT_SECRET} = (string) Uuid::generate(4);
+        });
+	}
+
+	/**
+	 * Returns the client endpoint relationship.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+	public function endpoint()
+	{
+		return $this->hasOne(static::$endpointModel);
+	}
 
 	/**
 	 * Returns the client grants relationship.
@@ -26,7 +75,7 @@ class Client extends Model {
 	 */
 	public function grants()
 	{
-		return $this->BelongsToMany(static::$grantsModel, 'client_grants');
+		return $this->belongsToMany(static::$grantsModel, 'client_grants')->withTimestamps();
 	}
 
 	/**
@@ -36,7 +85,7 @@ class Client extends Model {
 	 */
 	public function scopes()
 	{
-		return $this->BelongsToMany(static::$scopesModel, 'client_scopes');
+		return $this->belongsToMany(static::$scopesModel, 'client_scopes')->withTimestamps();
 	}
 
 }

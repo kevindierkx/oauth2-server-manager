@@ -122,11 +122,14 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		# Application
+		'AdamWathan\BootForms\BootFormsServiceProvider',
+
 		# Manager
-		'Manager\ManagerServiceProvider',
-		'Manager\ClientsServiceProvider',
-		'Manager\GrantsServiceProvider',
-		'Manager\ScopesServiceProvider',
+		'ManagerServiceProvider',
+		'OAuth\ClientServiceProvider',
+		'OAuth\GrantServiceProvider',
+		'OAuth\ScopeServiceProvider',
 
 	),
 
@@ -194,6 +197,9 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+
+		# Application
+		'BootForm'            => 'AdamWathan\BootForms\Facades\BootForm',
 
 	),
 

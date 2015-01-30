@@ -14,6 +14,7 @@
 ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
+	app_path().'/composers',
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/providers',
@@ -85,8 +86,16 @@ require app_path().'/filters.php';
 
 /*
 |--------------------------------------------------------------------------
-| Require The Filters File
+| Require The Helpers File
 |--------------------------------------------------------------------------
 */
 
 require app_path().'/helpers.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Composers File
+|--------------------------------------------------------------------------
+*/
+
+require app_path().'/composers.php';

@@ -8,14 +8,14 @@
 				<span class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="/">OAuth2 Server Manager</a>
+			{{ link_to_route('manager.index', 'OAuth2 Server Manager', [], ['class' => 'navbar-brand']) }}</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="nav-bar">
 			<ul class="nav navbar-nav navbar-right">
-				<li>{{ link_to_route('clients.index', 'Clients') }}</li>
-				<li>{{ link_to_route('grants.index', 'Grants') }}</li>
-				<li>{{ link_to_route('scopes.index', 'Scopes') }}</li>
+				<li>{{ link_to_route('oauth.clients.index', 'Clients') }}</li>
+				<li>{{ link_to_route('oauth.grants.index', 'Grants') }}</li>
+				<li>{{ link_to_route('oauth.scopes.index', 'Scopes') }}</li>
 			</ul>
 		</div>
 	</div>

@@ -3,7 +3,9 @@
 ////////////////////////////////////////
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-//@import "colors";
+
+@import "variables";
+@import "colors";
 
 ////////////////////////////////////////
 // Reset
@@ -21,6 +23,7 @@
 // Components
 ////////////////////////////////////////
 @import "components-bootstrap";
+@import "components-manager";
 
 ////////////////////////////////////////
 // Utility

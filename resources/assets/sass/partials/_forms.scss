@@ -1,0 +1,79 @@
+.form-row {
+	margin: 0; padding: $panel-body-padding;
+	padding-top: 0;
+
+	position: relative;
+
+	box-sizing: border-box;
+
+	+ .form-row {
+		padding-top: $panel-body-padding;
+		border-top: 1px solid $grey-200;
+	}
+
+	.help-block {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	> .help-block {
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+}
+
+.form-heading {
+	width: 100%;
+
+	margin-top: 0;
+	margin-left: -$panel-body-padding;
+	margin-right: -$panel-body-padding;
+	margin-bottom: 20px;
+
+	padding: 0 $panel-body-padding;
+	padding-bottom: $panel-body-padding;
+
+	border-bottom: 1px solid $grey-200;
+
+	font-size: $font-size-tiny;
+	line-height: $line-height-base;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	display: block;
+	float: left;
+
+	box-sizing: content-box;
+
+	@media (min-width: $screen-md-min) {
+		width: 180px;
+		margin: 0; padding: 0;
+
+		border-bottom: none;
+	}
+
+	> small {
+		display: block;
+	}
+}
+
+.form-body {
+	padding: 0;
+
+	@media (min-width: $screen-md-min) {
+		padding-left: 200px; /** Heading width + 20px **/
+	}
+}
+
+////////// Panel //////////
+
+.panel-body {
+	.form-row {
+		margin-left: -$panel-body-padding;
+		margin-right: -$panel-body-padding;
+	}
+
+	> .form-row:last-child {
+		margin-bottom: -15px;
+	}
+}

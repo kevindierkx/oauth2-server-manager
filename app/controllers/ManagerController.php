@@ -1,4 +1,4 @@
-<?php namespace Manager;
+<?php
 
 use Illuminate\Routing\Controller;
 use Illuminate\Routing\Redirector;
@@ -27,7 +27,7 @@ class ManagerController extends Controller {
 	 */
 	public function index()
 	{
-		return $this->redirector->route('clients.index');
+		return $this->redirector->route('oauth.clients.index');
 	}
 
 }

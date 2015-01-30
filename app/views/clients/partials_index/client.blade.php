@@ -1,5 +1,8 @@
 <tr>
-	<td>{{ $client->name }}</td>
+	<td>
+		{{ $client->name }}
+		<small>{{ $client->endpoint->redirect_uri }}</small>
+	</td>
 
 	<td>
 		<span class="badge">

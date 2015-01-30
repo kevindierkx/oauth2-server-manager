@@ -12,7 +12,7 @@ class Grant extends Model {
 	/**
 	 * @var string
 	 */
-	protected static $clientsModel = '\OAuth\Client';
+	protected static $clientsModel = 'OAuth\Client';
 
 	/**
 	 * Returns the client grants relationship.
@@ -21,7 +21,7 @@ class Grant extends Model {
 	 */
 	public function clients()
 	{
-		return $this->BelongsToMany(static::$clientsModel, 'client_grants');
+		return $this->belongsToMany(static::$clientsModel, 'client_grants')->withTimestamps();
 	}
 
 }

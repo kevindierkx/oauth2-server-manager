@@ -1,25 +1,25 @@
-<?php namespace Manager;
+<?php namespace OAuth;
 
 use BaseController;
 use Illuminate\View\Factory as ViewFactory;
-use OAuth\ScopesRepository;
+use OAuth\ScopeRepositoryInterface;
 
-class ScopesController extends BaseController {
+class ScopeController extends BaseController {
 
 	/**
-	 * @var \OAuth\ScopesRepository
+	 * @var \OAuth\ScopeRepositoryInterface
 	 */
 	protected $scopes;
 
 	/**
-	 * Bind view factory instance and scopes repository to class.
+	 * Bind required instances to the class.
 	 *
-	 * @param  \Illuminate\View\Factory  $viewFactory
-	 * @param  \OAuth\ScopesRepository  $scopes
+	 * @param  \Illuminate\View\Factory         $viewFactory
+	 * @param  \OAuth\ScopeRepositoryInterface  $scopes
 	 */
 	public function __construct(
 		ViewFactory $viewFactory,
-		ScopesRepository $scopes
+		ScopeRepositoryInterface $scopes
 	)
 	{
 		parent::__construct($viewFactory);
@@ -34,14 +34,14 @@ class ScopesController extends BaseController {
 	 */
 	public function index()
 	{
-		$scopes = $this->viewFactory->make('scopes.index')
+		$content = $this->viewFactory->make('scopes.index')
 			->with(
 				'scopes',
 				$this->scopes->paginate()
 			);
 
 		return $this->layout
-			->with('content', $scopes);
+			->with('content', $content);
 	}
 
 }

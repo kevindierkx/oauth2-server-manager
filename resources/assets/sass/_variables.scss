@@ -1,0 +1,11 @@
+////////// Typography //////////
+
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+$font-size-tiny:          ceil(($font-size-base * 0.65)); // ~10px
+
+////////// Panels //////////
+
+$panel-body-padding:          20px;
+$panel-heading-padding:       15px 20px;

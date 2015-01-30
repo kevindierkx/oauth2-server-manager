@@ -1,12 +1,12 @@
 <?php namespace OAuth;
 
-class ClientsRepository {
+class ScopeRepository implements ScopeRepositoryInterface {
 
 	use \RepositoryTrait;
 
 	/**
 	 * @var \Illuminate\Database\Eloquent\Model
 	 */
-	protected $model = '\OAuth\Client';
+	protected $model = '\OAuth\Scope';
 
 }

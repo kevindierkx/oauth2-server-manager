@@ -1,25 +1,25 @@
-<?php namespace Manager;
+<?php namespace OAuth;
 
 use BaseController;
 use Illuminate\View\Factory as ViewFactory;
-use OAuth\GrantsRepository;
+use OAuth\GrantRepositoryInterface;
 
-class GrantsController extends BaseController {
+class GrantController extends BaseController {
 
 	/**
-	 * @var \OAuth\GrantsRepository
+	 * @var \OAuth\GrantRepositoryInterface
 	 */
 	protected $grants;
 
 	/**
-	 * Bind view factory instance and grants repository to class.
+	 * Bind required instances to the class.
 	 *
-	 * @param  \Illuminate\View\Factory  $viewFactory
-	 * @param  \OAuth\GrantsRepository  $grants
+	 * @param  \Illuminate\View\Factory         $viewFactory
+	 * @param  \OAuth\GrantRepositoryInterface  $grants
 	 */
 	public function __construct(
 		ViewFactory $viewFactory,
-		GrantsRepository $grants
+		GrantRepositoryInterface $grants
 	)
 	{
 		parent::__construct($viewFactory);
@@ -34,14 +34,14 @@ class GrantsController extends BaseController {
 	 */
 	public function index()
 	{
-		$grants = $this->viewFactory->make('grants.index')
+		$content = $this->viewFactory->make('grants.index')
 			->with(
 				'grants',
 				$this->grants->get()
 			);
 
 		return $this->layout
-			->with('content', $grants);
+			->with('content', $content);
 	}
 
 }

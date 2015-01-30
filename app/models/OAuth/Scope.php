@@ -12,7 +12,7 @@ class Scope extends Model {
 	/**
 	 * @var string
 	 */
-	protected static $clientsModel = '\OAuth\Client';
+	protected static $clientsModel = 'OAuth\Client';
 
 	/**
 	 * Returns the client scopes relationship.
@@ -21,7 +21,7 @@ class Scope extends Model {
 	 */
 	public function clients()
 	{
-		return $this->BelongsToMany(static::$clientsModel, 'client_grants');
+		return $this->belongsToMany(static::$clientsModel, 'client_grants')->withTimestamps();
 	}
 
 }
