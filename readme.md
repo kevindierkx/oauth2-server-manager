@@ -1,25 +1,50 @@
-## Laravel PHP Framework
+## PHP OAuth 2.0 Server Manager
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This is a manager interface for the [lucadegasperi/oauth2-server-laravel](https://github.com/lucadegasperi/oauth2-server-laravel) package.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+This application makes maintaining your OAuth2 clients, grants and scopes a breeze. Clients get added with UUID's for their client ID and secret.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+### Installation
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+**This package does not manage your OAuth 2.0 Server migrations and/or installation, a standalone installation of the [lucadegasperi/oauth2-server-laravel](https://github.com/lucadegasperi/oauth2-server-laravel) package is required.**
 
-## Official Documentation
+This application is build on [Laravel](http://laravel.com) for a complete installation guide for Laravel applications please check the [Laravel Docs](http://laravel.com/docs/4.2/quick).
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+#### Quickstart
 
-### Contributing To Laravel
+To install this application you will need:
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+- PHP >= 5.4
+- MCrypt PHP Extension
+
+After cloning or downloading this application you need to run ```composer install``` from the root of the application directory.
+
+Creating a copy of the ```.env.example``` as ```.env.php```, ```.env.production.php``` or ```.env.local.php``` enables you to configure your API/OAuth database connection.
+
+A working example configuration for laravel/homestead:
+
+```PHP
+	/*
+	|--------------------------------------------------------------------------
+	| API database credentials
+	|--------------------------------------------------------------------------
+	*/
+
+	'DB_OAUTH_HOST' => 'localhost',
+
+	'DB_OAUTH_DATABASE' => 'api',
+
+	'DB_OAUTH_USERNAME' => 'homestead',
+
+	'DB_OAUTH_PASSWORD' => 'secret',
+```
+
+You should now be able to visit the application in your browser and view your OAuth 2.0 Server clients, grants and scopes.
+
+### Credits
+
+- [Kevin Dierkx](https://github.com/kevindierkx)
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The MIT License (MIT). Please see [License File](https://github.com/pcextreme/oauth2-server-manager-laravel/blob/master/LICENSE) for more information.
