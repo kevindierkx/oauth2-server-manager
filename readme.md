@@ -44,6 +44,7 @@ You should now be able to visit the application in your browser and view your OA
 ### Credits
 
 - [Kevin Dierkx](https://github.com/kevindierkx)
+- [Niels Tholenaar](https://github.com/nielstholenaar)
 
 ### License
 
