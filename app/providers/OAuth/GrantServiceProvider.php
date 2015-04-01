@@ -47,8 +47,10 @@ class GrantServiceProvider extends ServiceProvider {
 				[
 					'names' => [
 						'index' => 'oauth.grants.index',
+						'create' => 'oauth.grants.create',
+						'store'  => 'oauth.grants.store',
 					],
-					'only' => ['index'],
+					'except' => ['show', 'edit', 'update', 'destroy'],
 				]
 			);
 

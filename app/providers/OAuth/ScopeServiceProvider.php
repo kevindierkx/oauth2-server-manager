@@ -47,8 +47,10 @@ class ScopeServiceProvider extends ServiceProvider {
 				[
 					'names' => [
 						'index' => 'oauth.scopes.index',
+						'create' => 'oauth.scopes.create',
+						'store'  => 'oauth.scopes.store',
 					],
-					'only' => ['index'],
+					'except' => ['show', 'edit', 'update', 'destroy'],
 				]
 			);
 
