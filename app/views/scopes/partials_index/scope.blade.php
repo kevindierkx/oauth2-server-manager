@@ -1,7 +1,7 @@
 <tr>
-	<td>{{ $scope->id }}</td>
+    <td>{{ $scope->id }}</td>
 
-	<td>{{ $scope->description }}</td>
+    <td>{{ $scope->description }}</td>
 
-	<td>{{ $scope->created_at }}</td>
+    <td>{{ $scope->created_at }}</td>
 </tr>
