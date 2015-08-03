@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            {{ link_to_route('manager.index', 'OAuth2 Server Manager', [], ['class' => 'navbar-brand']) }}</a>
+            {{ link_to_route('manager.index', 'OAuth2 Server Manager', [], ['class' => 'navbar-brand']) }}
         </div>
 
         <div class="collapse navbar-collapse" id="nav-bar">
