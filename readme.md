@@ -24,27 +24,22 @@ Creating a copy of the ```.env.example``` as ```.env.php```, ```.env.production.
 A working example configuration for laravel/homestead:
 
 ```PHP
-	/*
-	|--------------------------------------------------------------------------
-	| API database credentials
-	|--------------------------------------------------------------------------
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | API database credentials
+    |--------------------------------------------------------------------------
+    */
 
-	'DB_OAUTH_HOST' => 'localhost',
+    'DB_OAUTH_HOST' => 'localhost',
 
-	'DB_OAUTH_DATABASE' => 'api',
+    'DB_OAUTH_DATABASE' => 'api',
 
-	'DB_OAUTH_USERNAME' => 'homestead',
+    'DB_OAUTH_USERNAME' => 'homestead',
 
-	'DB_OAUTH_PASSWORD' => 'secret',
+    'DB_OAUTH_PASSWORD' => 'secret',
 ```
 
 You should now be able to visit the application in your browser and view your OAuth 2.0 Server clients, grants and scopes.
-
-### Credits
-
-- [Kevin Dierkx](https://github.com/kevindierkx)
-- [Niels Tholenaar](https://github.com/nielstholenaar)
 
 ### License
 
